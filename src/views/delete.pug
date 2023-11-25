@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Book delete
+        link(rel='stylesheet', href='/src/style/delete.css')
+        link(rel="stylesheet", href='/src/font-awesome/css/font-awesome.min.css')
+    body
+        form.return(method="get", action=`/books/`)
+            button(type="submit")
+                <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+
+        div.delete_form()
+            p 
+                ="Введите id удаляемой книги"
+            input(type="text", id="delete_input" name="delete_id")
+
+            button(type="submit", onclick="delete_action()")
+                <i class="fa fa-trash" aria-hidden="true"></i>
+
+        dialog#dialog(open)
+            div.dialog_content(id="dialog_content")
+                    p
+                        ="Вы действительно хотите удалить книгу?"
+                    div.dialog_buttons
+                        input(type="submit", value="Да", name="agree", onclick="processing_delete('Да')")
+
+                        input(type="submit", value="Нет", name="agree", onclick="processing_delete('Нет')")
+
+
+    script(src="/src/scripts/delete.js")

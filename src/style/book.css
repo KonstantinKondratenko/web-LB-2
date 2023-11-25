@@ -1,0 +1,44 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+    zoom: 115%;
+   background-color: aqua;
+}
+
+.book_info {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 10px;
+}
+
+.return {
+    padding: 10px;
+}
+
+.book_status {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+#dialog {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dialog_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dialog.active 
+{
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Страница книги
+        link(rel='stylesheet', href='/src/style/book.css')
+        link(rel="stylesheet", href='/src/font-awesome/css/font-awesome.min.css')
+    body
+        div
+            form.return(method="get", action=`/books/`)
+                button(type="submit")
+                    <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+
+        div.book_info() 
+            div
+                p 
+                    =`Название: ${book.title}`
+                p 
+                    =`Автор: ${book.author}`
+                p 
+                    =`Год: ${book.date_release}`
+
+                div.book_status
+                    if book.is_taken == false
+                        div 
+                            =`Книга в библиотеке`
+
+                        div.buttons
+                            button(type="submit", onclick="take_action('take')")
+                                <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+
+                            form(method="get", action=`/books/${book.id}/edit`)
+                                button(type="submit")
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                    else
+                        div 
+                            =`Книга забронирована на имя ${book.who_taken} до ${book.date_return}`
+
+                        div.buttons
+                            button(type="submit", onclick="take_action('return')")
+                                <i class="fa fa-undo" aria-hidden="true"></i>
+
+                            form(method="get", action=`/books/${book.id}/edit`)
+                                button(type="submit")
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+
+        if book.is_taken == false
+            dialog#dialog(open)
+                div.dialog_content()
+                    p
+                        ="Оформление книги"
+                        
+                    input(type="text", id="who_taken", value="name")
+
+                    input(type="date", id="date_return", value="2023-12-01")
+
+                    div
+                        button(type="submit", onclick="processing_take('take')")
+                            ="Оформить"
+
+                        button(type="submit", onclick="processing_take('undo')")
+                            ="Отменить"
+
+    script(src="/src/scripts/take.js")                    

@@ -1,0 +1,45 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+    zoom: 115%;
+    background-color: aqua;
+
+    /* background-image: url("../../img/back.png");
+    background-size: 1000px 1000px;
+    background-repeat: no-repeat; */
+    
+}
+
+.delete_form {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-direction: column;
+
+    padding-top: 10px;
+    padding-right: 900px;
+    /* padding-left: 100px; */
+}
+
+.return {
+    padding: 10px;
+}
+
+
+#dialog {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dialog_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dialog.active 
+{
+    opacity: 1;
+    visibility: visible;
+}
+

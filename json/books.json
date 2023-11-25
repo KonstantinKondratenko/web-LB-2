@@ -1,0 +1,58 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Три товарища",
+            "author": "Эрик Мария Ремарк",
+            "date_release": "1936",
+            "is_taken": false,
+            "who_taken": null,
+            "date_return": null
+        },
+        {
+            "id": 2,
+            "title": "Жизнь взаймы",
+            "author": "Эрик Мария Ремарк",
+            "date_release": "1948",
+            "is_taken": false,
+            "who_taken": null,
+            "date_return": null
+        },
+        {
+            "id": 3,
+            "title": "Ночной полет",
+            "author": "Аунтуа Экзюпери",
+            "date_release": "1931",
+            "is_taken": false,
+            "who_taken": null,
+            "date_return": null
+        },
+        {
+            "id": 4,
+            "title": "Посторонний",
+            "author": "Альбер Камю",
+            "date_release": "1942",
+            "is_taken": false,
+            "who_taken": null,
+            "date_return": null
+        },
+        {
+            "id": 5,
+            "title": "Маленький принц",
+            "author": "Аунтуа Экзюпери",
+            "date_release": "1943",
+            "is_taken": false,
+            "who_taken": null,
+            "date_return": null
+        },
+        {
+            "id": 6,
+            "title": "Миф о Сизифе",
+            "author": "Альбер Камю",
+            "date_release": "1942",
+            "is_taken": false,
+            "who_taken": null,
+            "date_return": null
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+    zoom: 115%;
+    background-color: aqua;
+
+}
+
+.actions {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.filter {
+    padding-left: 10px;
+}
+
+.header_name {
+    position: inherit;
+    height: 100px;
+    text-align: center;
+    font-size: 54px;
+}
+
+a {
+    text-decoration: none;
+}

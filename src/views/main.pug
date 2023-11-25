@@ -1,0 +1,50 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Library
+        link(rel='stylesheet', href='/src/style/main.css')
+        link(rel="stylesheet", href='/src/font-awesome/css/font-awesome.min.css')
+
+    body
+        header()
+            .header_name ИС Библиотека
+
+        div.actions()
+            form(method="get", action="/books/add")
+                button(type="submit")
+                    ="Добавить"
+
+            form(method="get", action="/books/delete")
+                button(type="submit")
+                    ="Удалить"
+
+            div.filter
+                form(action="")
+                    <i class="fa fa-filter", aria-hidden="true"></i>
+                    select(name="filter", id="filter_type", onchange="processing_filter()")
+                        option(value="all")
+                            ="По id"
+                        option(value="title")
+                            ="По названию"
+                        option(value="date")
+                            ="По дате возврата"
+                        option(value="is_taken")
+                            ="Вывести только в наличии"
+
+        div.books()
+            p() 
+                =`Список книг:`
+            ul()
+                each book in books
+                    li()
+                        a(href="/books/" + book.id) 
+                            =`${book.id}. ${book.title} (автор: ${book.author}, год: ${book.date_release})`
+                        if book.is_taken == false 
+                            div
+                                ="Книга в наличии"
+                        else 
+                            div 
+                                =`Книга забронирована на имя ${book.who_taken} до ${book.date_return}`
+    
+    script(src="/src/scripts/filter.js")

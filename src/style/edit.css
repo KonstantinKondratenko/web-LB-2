@@ -1,0 +1,15 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+    zoom: 115%;
+    background-color: aqua;
+
+}
+
+.edit_form {
+    display: flex;
+    flex-direction: column; 
+}
+
+.return {
+    padding: 10px;
+}
